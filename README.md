@@ -1,81 +1,71 @@
-# P01_01. Sistem Manajemen Tugas 
+# P02_01. Sistem Manajemen Tugas 
 
 Studi Kasus: Sistem Manajemen Tugas untuk Mata Kuliah Pemrograman
 
-Poppy dan Mabel telah merencanakan pengembangan Sistem Manajemen Tugas (SMT) untuk membantu mereka dan orang lain dalam mengelola tugas-tugas mereka di berbagai mata kuliah, dengan fokus pada mata kuliah pemrograman. Berikut ini adalah rincian studi kasus untuk Sistem Manajemen Tugas ini:
+Setelah sukses dengan Sistem Manajemen Tugas (SMT), Poppy dan Mabel memutuskan untuk menambahkan fitur rekomendasi. Mereka ingin mahasiswa tidak hanya tahu prioritas tugas berdasarkan deadline dan tingkat kesulitan, tetapi juga mendapatkan saran aksi berdasarkan prioritas tersebut.
 
-*1. Deskripsi Tugas*
-   - Deskripsi Tugas adalah informasi singkat yang mendeskripsikan apa yang menjadi tugasnya. Ini termasuk deskripsi umum tentang apa yang harus dilakukan dalam tugas tersebut.
+Deskripsi Tambahan:
 
-*2. Kode Mata Kuliah*
-   - Kode Mata Kuliah adalah kode unik yang digunakan untuk mengidentifikasi mata kuliah. Contoh: "CS101" untuk mata kuliah Pemrograman Dasar.
+*9. Rekomendasi Tugas*
 
-*3. Nama Mata Kuliah*
-   - Nama Mata Kuliah adalah nama lengkap dari mata kuliah terkait. Contoh: "Pemrograman Dasar".
+Berdasarkan prioritas, sistem akan memberikan rekomendasi tindakan kepada mahasiswa.
 
-*4. Pengampu*
-   - Pengampu adalah nama dosen yang mengajar mata kuliah tersebut. Contoh: "Dr. John Smith".
+Jika prioritas di atas 3: "Penting! Anda harus mengerjakan tugas ini segera."
+Jika prioritas di antara 1.5 hingga 3: "Tugas ini memiliki prioritas menengah."
+Jika prioritas di bawah 1.5: "Tugas ini relatif ringan, namun jangan tunda terlalu lama."
 
-*5. Deadline*
-   - Deadline adalah waktu batas pengumpulan tugas. Ini dapat berupa tanggal dan jam khusus. Contoh: "20 September 2023, pukul 23.59 WIB".
+cara menghitung prioritas:
+prioritas =TingkatKesulitan * (1.0 / hariHinggaDeadline)
 
-*6. Format Penamaan Tugas*
-   - Format penamaan tugas adalah aturan penamaan file tugas. Dalam kasus ini, format penamaan tugas adalah: "NIM_NAMA_NAMA_MATKUL". Contoh: "12345678_JohnSmith_PemrogramanDasar".
+Fitur Tambahan:
+Memberikan rekomendasi tindakan berdasarkan prioritas tugas.
+Mengurutkan tugas berdasarkan prioritasnya dan menampilkan rekomendasi.
 
-Sistem Manajemen Tugas (SMT) yang dikembangkan oleh Poppy dan Mabel akan memungkinkan mahasiswa dan pengajar untuk:
-
-- Mendaftarkan tugas baru dengan deskripsi, kode mata kuliah, nama mata kuliah, pengampu, dan deadline.
-- Menampilkan Tugas Baru dengan deskripsi, kode mata kuliah, nama mata kuliah, pengampu, dan deadline.
-
-Dengan Sistem Manajemen Tugas ini, Poppy dan Mabel berharap dapat membantu mahasiswa dalam mengatur tugas-tugas mereka dengan lebih efisien, terutama dalam mata kuliah pemrograman. Sistem ini juga dapat berguna bagi mahasiswa di mata kuliah lain yang memiliki tugas-tugas yang perlu diorganisir dan diawasi dengan baik.
-
-
-
-## Input - Output Simulation (P01)
-
-Tugas berikutnya, kembangkan sebuah solusi sederhana yang secara berturut-turut akan membaca kesepuluh properti buku. Setiap properti baca dalam satu baris masukan. Selanjutnya, tampilkan semua nilai properti yang telah dimasukkan dalam satu baris keluaran. Antara properti yang satu dengan properti lainnya dipisahkan dengan tanda pipe ``|``. Perhatikan dua contoh berikut.
+## Input - Output Simulation
+Dalam simulasi ini, pengguna akan memasukkan semua informasi yang dibutuhkan tentang tugas, termasuk tingkat kesulitan dan hari hingga deadline. Setelah itu, sistem akan menampilkan informasi tugas beserta prioritas dan rekomendasi tindakannya.
 
 ### Example 1
-
 **Input**:
 ```bash
-Buat program sederhana untuk menghitung jumlah bilangan ganjil dalam rentang 1 hingga 100.
-12S1102
-Pemrograman Visual
-Mario E. S. Simaremare, S.Kom., M.Sc.
-15 September 2023, pukul 23.59 WIB
-12S23004_PoppySibuea_PemrogramanVisual
+Buat program untuk simulasi ATM sederhana.
+12S1103
+Pemrograman Lanjutan
+Dr. Emily Watson
+5 Oktober 2023, pukul 15.00 WIB
+12S22005_PoppySibuea_PemrogramanLanjutan
+5    # Tingkat Kesulitan (1-5)
+3    # Hari hingga deadline
+Belum Selesai  # Status (Belum Selesai/Sudah Selesai)
 
 ```
-
-
-
-#### Output :
-```bash
-Buat program sederhana untuk menghitung jumlah bilangan ganjil dalam rentang 1 hingga 100.|12S1102|Pemrograman Visual|Mario E. S. Simaremare, S.Kom., M.Sc.|15 September 2023, pukul 23.59 WIB|12S23004_PoppySibuea_PemrogramanVisual
-
-```
-
-
-### Example 2
-
-**Input**:
-```bash
-Lakukan eksperimen sederhana untuk mengukur percepatan gravitasi di permukaan Bumi.
-FIS1103
-Fisika Dasar
-Nenni Mona Aruan, S.Pd., M.Si
-18 September 2023, pukul 21.30 WIB
-12S23011_MabelChristoffelAS_FisikaDasar
-
-```
-
-
 
 
 **Output**:
 ```bash
-Lakukan eksperimen sederhana untuk mengukur percepatan gravitasi di permukaan Bumi.|FIS1103|Fisika Dasar|Nenni Mona Aruan, S.Pd., M.Si|18 September 2023, pukul 21.30 WIB|12S23011_MabelChristoffelAS_FisikaDasar
+Prioritas: 1.67
+Buat program untuk simulasi ATM sederhana.|12S1103|Pemrograman Lanjutan|Dr. Emily Watson|5 Oktober 2023, pukul 15.00 WIB|12S22005_PoppySibuea_PemrogramanLanjutan|Belum Selesai|Tugas ini memiliki prioritas menengah.
+
+```
+
+### Example 2
+**Input**:
+```bash
+Buat program untuk simulasi ATM sederhana.
+12S1103
+Pemrograman Lanjutan
+Dr. Emily Watson
+5 Oktober 2023, pukul 15.00 WIB
+12S23046_Anastasya_PemrogramanLanjutan
+5    # Tingkat Kesulitan (1-5)
+1    # Hari hingga deadline
+Belum Selesai  # Status (Belum Selesai/Sudah Selesai)
+
+```
+
+**Output**:
+```bash
+Prioritas: 5.00
+Buat program untuk simulasi ATM sederhana.|12S1103|Pemrograman Lanjutan|Dr. Emily Watson|5 Oktober 2023, pukul 15.00 WIB|12S23046_Anastasya_PemrogramanLanjutan|Belum Selesai|Penting! Anda harus mengerjakan tugas ini segera.
 
 ```
 
@@ -86,34 +76,48 @@ Lakukan eksperimen sederhana untuk mengukur percepatan gravitasi di permukaan Bu
 
 
 
-# P01_02. Pengelolaan Gudang Buku 
-
-Dengan perkembangan usaha penjualan bukunya, Ucok dan Butet memutuskan untuk membangun gudang untuk menyimpan buku-buku yang akan dijual. Mereka perlu suatu program sederhana untuk membantu mereka mengelola informasi di gudang buku tersebut.
-
-Sebuah gudang dapat menyimpan beberapa jenis buku dengan informasi sebagai berikut:
-
-1. Nama Gudang: Nama unik yang digunakan untuk mengidentifikasi gudang tersebut dalam sistem manajemen.
-2. Kapasitas Gudang: Konstanta  yang merepresentasikan berapa banyak buku yang dapat disimpan di gudang tersebut.
-3. Jumlah Buku Saat Ini: Jumlah total buku atau produk yang saat ini disimpan di gudang
-4. AC: Sebuah boolean yang menyatakan apakah gudang dilengkapi dengan AC (yes/no).
-5. Lantai: Jenis lantai yang digunakan di gudang (misal: kayu, keramik, beton).
-6. Ketersediaan Teknologi  :Informasi tentang teknologi dan peralatan yang digunakan dalam gudang, seperti sistem pelacakan stok otomatis, sistem pencahayaan, dan peralatan material handling.
 
 
 
-# Input-Output Simulation
+# P02_02. Pengelolaan Gudang Buku 
 
-Buatlah program yang akan membaca informasi gudang seperti di atas dan kemudian menampilkan ringkasan informasi tersebut.Antara properti yang satu dengan properti lainnya dipisahkan dengan tanda pipe ```|```. Perhatikan dua contoh berikut.
+Dalam kota Balige, Seprian dan Anastasya adalah dua sahabat yang memiliki kecintaan pada buku. Mereka memutuskan untuk menggabungkan gairah mereka dengan membuka toko buku. Bisnis mereka tumbuh dengan cepat, dan mereka membutuhkan sebuah gudang untuk menyimpan koleksi buku yang terus bertambah. Untuk mengelola gudang buku ini, mereka memerlukan sebuah sistem.
+
+Fitur Gudang:
+
+1. Nama Gudang: Sebuah identifikasi unik untuk setiap gudang.
+2. Kapasitas Gudang: Menunjukkan berapa banyak buku yang dapat disimpan.
+3. Jumlah Buku Saat Ini: Menghitung buku yang saat ini ada di gudang.
+4. AC: Menentukan apakah gudang dilengkapi dengan AC untuk menjaga kondisi buku.
+5. Lantai: Material lantai yang digunakan, yang bisa mempengaruhi kondisi penyimpanan.
+6. Ketersediaan Teknologi: Teknologi yang digunakan dalam gudang untuk mempermudah pengelolaan, seperti sistem pelacakan atau pencahayaan.
+   
+
+Namun, hanya memiliki informasi tentang gudang tidaklah cukup. Seprian dan Anastasya ingin mengetahui kualitas pengelolaan gudang mereka. Maka dari itu, mereka memutuskan untuk membuat sistem penilaian.
+
+Cara Mendapatkan Poin:
+
+Poin diberikan berdasarkan persentase kapasitas gudang yang terpakai.
+Misalkan jika 20% kapasitas terpakai, gudang mendapat poin 20. Demikian seterusnya.
+
+Dengan sistem penilaian ini, gudang dapat diberi status berdasarkan skor total yang diperoleh:
+
+-  Skor >= 40: Gudang Elite
+-  Skor >= 25: Gudang Standar
+-  Skor < 25: Gudang Perlu Peningkatan
+
+Seprian dan Anastasya berharap dengan sistem ini, mereka dapat meningkatkan kualitas pengelolaan gudang buku mereka, sehingga memastikan bahwa setiap buku yang dijual berada dalam kondisi terbaik.
 
 ## Example 1
 **Input**:
 ```bash
-Gudang Utama
-5000
-2300
-yes
-beton
-sistem pelacakan stok otomatis, peralatan material handling
+Nama Gudang: Gudang Haloha
+Kapasitas Gudang: 5000
+Jumlah Buku Saat Ini: 1000
+AC: no
+Lantai: kayu
+Ketersediaan Teknologi: sistem pencahayaan
+
 
 ```
 
@@ -122,17 +126,21 @@ sistem pelacakan stok otomatis, peralatan material handling
 **Output**:
 ```bash
 Informasi Gudang:
-Gudang Utama|5000|2300|yes|beton|sistem pelacakan stok otomatis, peralatan material handling
+Gudang Haloha|5000|1000|yes|beton|sistem pelacakan stok otomatis, sistem pencahayaan|20|Gudang Perlu Peningkatan
 
 ```
+
+Penjelasan:
+Penggunaan kapasitas gudang = (1000/5000) x 100% = 20%
+Dengan demikian, Skor Gudang = 20.
 
 
 ## Example 2
 **Input**:
 ```bash
-Gudang Cabang
-3000
-1500
+Gudang Samping
+3500
+1400
 no
 kayu
 sistem pencahayaan, peralatan material handling
@@ -144,9 +152,15 @@ sistem pencahayaan, peralatan material handling
 **Output**:
 ```bash
 Informasi Gudang:
-Gudang Cabang|3000|1500|1996|no|kayu|sistem pencahayaan, peralatan material handling
+Gudang Samping|3500|1400|no|kayu|sistem pencahayaan, peralatan material handling|40|Gudang Elite
 
 ```
+
+Penjelasan:
+Penggunaan kapasitas gudang = (1400/3500) x 100% = 40%
+Dengan demikian, Skor Gudang = 40.
+
+
 
 
 
